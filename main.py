@@ -24,7 +24,7 @@ df = pd.read_csv('data.csv')
 
 html_temp = """
 		
-		<h1 style="color:{};text-align:center;">what is your humour sense?</h1>
+		<h1 style="color:{};text-align:center;">what is your humour sense? <br> There are 32 questions. Try to read them carefully and answer those. </h1>
 		</div>
 		"""
 
