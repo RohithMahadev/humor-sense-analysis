@@ -119,7 +119,7 @@ ques_15_scale = questions(15)
 ques_16 = st.markdown("<h5 style='color: #D16161;'><b>16. I do not often say funny things to put myself down.</b></h5>", unsafe_allow_html=True)
 ques_16_scale = questions(16)
 
-st.markdown("<h3 style='color: PURPLE;'><br><br><b>YOU HAVE MADE IT HAVE WAY THROUGH !</b><br><br></h5>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: PURPLE;'><br><br><b>YOU HAVE MADE IT HALF WAY THROUGH !</b><br><br></h5>", unsafe_allow_html=True)
 
 
 #q17
@@ -196,12 +196,6 @@ if btn_val is True:
 	selfenhancing = np.round((ques_2_scale + ques_6_scale + ques_10_scale + ques_14_scale + ques_18_scale + ques_22_scale + ques_26_scale + ques_30_scale)/8,1)
 	aggressive =  np.round((ques_3_scale+ ques_7_scale + ques_11_scale+ ques_15_scale + ques_19_scale + ques_23_scale + ques_27_scale + ques_31_scale)/8,1)
 	selfdefeating = np.round((ques_4_scale + ques_8_scale + ques_12_scale+ ques_16_scale + ques_20_scale + ques_24_scale + ques_28_scale + ques_32_scale)/8,1)
-	now = datetime.now()
-	dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-	answers = pd.DataFrame([dt_string,affiliative,selfenhancing,aggressive,selfdefeating])
-	answers = answers.T
-
-	
 
 	fig_1 = go.Figure(go.Indicator(
     mode = "gauge+number",
@@ -255,9 +249,7 @@ if btn_val is True:
 	st.plotly_chart(fig_4,use_container_width=True)
 
 	
-	path = 'test_data.csv'
-	with open(path, 'a') as file:
-		answers.to_csv(file,index = False, header = False)
+
 
 	st.balloons()
 
